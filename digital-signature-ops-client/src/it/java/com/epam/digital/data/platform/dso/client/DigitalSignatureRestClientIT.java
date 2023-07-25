@@ -240,7 +240,8 @@ class DigitalSignatureRestClientIT {
     var httpHeaders = new HttpHeaders();
     httpHeaders.add(HttpHeaders.CONTENT_TYPE, "application/json");
     httpHeaders.add("X-Access-Token", "token");
-    var contents = List.of(new ContentDto("data1"), new ContentDto("data2"));
+    var contents = List.of(new ContentDto("data1", "test.txt"),
+        new ContentDto("data2", "test2.txt"));
     var expectedResult = new SignDataResponseDto(contents);
     var request = new SignInfoRequestDto("signature", SignFormat.CADES);
     restClientWireMock.addStubMapping(

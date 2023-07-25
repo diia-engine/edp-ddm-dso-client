@@ -22,8 +22,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Data transfer object representing content data from signature. The content data represented as a
- * string.
+ * Data transfer object representing content from signature. The content data represented as a
+ * string and file name.
  */
 @Builder
 @Data
@@ -32,4 +32,5 @@ import lombok.NoArgsConstructor;
 public class ContentDto {
 
   private String data;
+  private String name;
 }

@@ -243,7 +243,7 @@ class DigitalSignatureRestClientIT {
     var contents = List.of(new ContentDto("data1", "test.txt"),
         new ContentDto("data2", "test2.txt"));
     var expectedResult = new SignDataResponseDto(contents);
-    var request = new SignInfoRequestDto("signature", SignFormat.CADES);
+    var request = new SignInfoRequestDto("signature", SignFormat.ASIC);
     restClientWireMock.addStubMapping(
         stubFor(post(urlEqualTo(BASE_URL + "/content"))
             .withRequestBody(equalTo(objectMapper.writeValueAsString(request)))
@@ -271,7 +271,7 @@ class DigitalSignatureRestClientIT {
     var signDetails = new SignDetailsDto();
     signDetails.setSubjFullName("fullName");
     var expectedResult = new SignatureInfoResponseDto(List.of(signDetails));
-    var request = new SignInfoRequestDto("signature", SignFormat.ASIC);
+    var request = new SignInfoRequestDto("signature", SignFormat.CADES);
     restClientWireMock.addStubMapping(
         stubFor(post(urlEqualTo(BASE_URL + "/info"))
             .withRequestBody(equalTo(objectMapper.writeValueAsString(request)))

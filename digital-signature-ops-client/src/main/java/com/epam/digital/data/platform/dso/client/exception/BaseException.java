@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 EPAM Systems.
+ * Copyright 2021 EPAM Systems.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,17 +34,6 @@ public class BaseException extends RuntimeException {
    * @param errorDto error data transfer object with error specification
    */
   public BaseException(ErrorDto errorDto) {
-    this.errorDto = errorDto;
-  }
-
-  /**
-   * Constructor for base exception
-   *
-   * @param msg      error message
-   * @param errorDto error data transfer object with error specification
-   */
-  public BaseException(String msg, ErrorDto errorDto) {
-    super(msg);
     this.errorDto = errorDto;
   }
 }
